@@ -1,0 +1,23 @@
+<div class="dropdwn">
+<nav >
+
+  <img class="logo" src="\assets\logo1.png" title="logo" routerLink="/about">
+    <ul>
+      <li><a href="#" routerLink="/home">Home</a></li>
+      <li><a href="#" routerLink="/about">About us </a></li>
+      <li><a href="#" routerLink="/join-us">Join us </a></li>
+      <li><a href="#" routerLink="/contacts">Contacts</a></li>
+      <div *ngIf="!logged">
+        <li><a id="loginReg" routerLink='/login'>Login</a></li>
+      </div>
+      <div *ngIf="logged">
+        <li><a id="loginReg" (click)="onLogout()">Log out</a></li>
+      </div>
+      <li><a id="loginReg" routerLink="/registration">Registration</a></li>
+    </ul>
+
+  </nav>
+  <div>
+
+  </div>
+</div>

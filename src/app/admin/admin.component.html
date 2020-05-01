@@ -1,0 +1,89 @@
+<div class="admin">
+    <div class="inputs">
+        <div class="admin_title">Admin panel</div>
+        <div class="i_item">
+            <div class="label">Company</div>
+            <input type="text" name="company" [(ngModel)]="flightModel.company">
+        </div>
+        <div class="i_item">
+            <div class="label">Destination</div>
+            <input type="text" name="destination" [(ngModel)]="flightModel.destination">
+        </div>
+        <div class="i_item">
+            <div class="label">Point of departure</div>
+            <input type="text" name="pointOfDeparture" [(ngModel)]="flightModel.pointOfDeparture">
+        </div>
+        <div class="i_item">
+            <div class="label">Start date</div>
+            <input type="text" name="startDate" [(ngModel)]="flightModel.startDate">
+        </div>
+        <div class="i_item">
+            <div class="label">Start time</div>
+            <input type="text" name="startTime" [(ngModel)]="flightModel.startTime">
+        </div>
+        <div class="i_item">
+            <div class="label">Arriving time</div>
+            <input type="text" name="arrivingTime" [(ngModel)]="flightModel.arrivingTime">
+        </div>
+        <div class="i_item">
+            <div class="label">Arriving date</div>
+            <input type="text" name="arrivingDate" [(ngModel)]="flightModel.arrivingDate">
+        </div>
+        <div class="i_item">
+            <div class="label">Time spent</div>
+            <input type="text" name="timeSpent" [(ngModel)]="flightModel.timeSpent">
+        </div>
+        <div class="i_item">
+            <div class="label">Amount of seats</div>
+            <input type="text" name="amountOfSeats" [(ngModel)]="flightModel.amountOfSeats">
+        </div>
+        <div *ngIf="!editable">
+            <div class="i_button" (click)="onCreate()">Submit</div>
+        </div>
+        <div *ngIf="editable">
+            <div class="i_button" (click)="onUpdate()">Update</div>
+        </div>
+    </div>
+    <div class="flights">
+        <div class="admin_title">List of existing tickets</div>
+        <div *ngFor="let f of flights">
+            <div class="f_item">
+                <div class="buttons">
+                    <i class="material-icons" (click)="onEdit(f._id)">create</i>
+                    <i class="material-icons" (click)="onDelete(f._id)">cancel</i>
+                </div>
+                <div class="f_item__title">
+                    {{f.company}}
+                </div>
+                <div class="f_item__content">
+                    <div class="f_item__left">
+                        <p class="time">
+                            {{f.startTime}}
+                        </p>
+                        <p>
+                            {{f.pointOfDeparture}}
+                        </p>
+                        <p>
+                            {{f.startDate}}
+                        </p>
+                    </div>
+                    <div class="f_item__mid">
+                        <div class="f_item__bar"></div>
+                        <i class="material-icons">keyboard_arrow_right</i>                    
+                    </div>
+                    <div class="f_item__right">
+                        <p class="time">
+                            {{f.arrivingTime}}
+                        </p>
+                        <p>
+                            {{f.destination}}
+                        </p>
+                        <p>
+                            {{f.arrivingDate}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

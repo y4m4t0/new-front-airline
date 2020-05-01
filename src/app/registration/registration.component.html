@@ -1,0 +1,42 @@
+<!-- 
+
+    <body>
+        <app-header></app-header>
+
+        <form class="box"action="registration.component.html">
+            <h1>join us</h1>
+            <input type="text" placeholder="Username" id="username">
+            <input type="password" placeholder="Password" id="password">
+            <input type="password" placeholder="Confirm password" id="password">
+            <input class = "btn" type="submit" value="SIGN UP">
+        </form>
+    </body> -->
+    <html>
+  <body>
+    <div class="all">
+     <div class="header"> <app-header></app-header></div>
+     <div class="betweenCon">  
+    </div>
+    <div>
+        <form class="box"action="registration.component.html">
+            <h1>join us</h1>
+            <input type="text" placeholder="Email" id="username" name="email" [(ngModel)]="regModel.email">
+            <input type="text" placeholder="Username" id="username" name="name" [(ngModel)]="regModel.name">
+            <input type="password" placeholder="Password" id="password" name="password" [(ngModel)]="regModel.password">
+            <input type="password" placeholder="Confirm password" id="password" name="password1" [(ngModel)]="regModel.password1">
+            <input class = "btn" type="submit" (click)="onReg()" value="SIGN UP">
+        </form>
+    </div>
+</div>
+    
+    
+    <div class="lineBetween"></div>
+    <div class="betweenCon1">
+
+    </div>
+    
+    
+    <app-footer></app-footer>
+  </body>
+</html>
+

@@ -1,0 +1,155 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="home.component.css">
+</head>
+
+<body>
+	<div id="all">
+
+
+
+		<div class="header">
+			<app-header></app-header>
+		</div>
+		<div class="betweenCon">
+		</div>
+
+
+
+		<div class="main">
+			<div class="main-paper">
+				<div class="main-title">
+					<h1 class="main-title">Research flights</h1>
+				</div>
+
+				<div class="main-button-choose">
+					<button id="one-way" class="main-button-choose" onclick="oneClick()">One way</button>
+					<button id="two-way" class="main-button-choose" onclick="twoClick()">Two way</button>
+				</div>
+
+				<div class="main-input-row-1">
+					<div class="main-input-row-1__item">
+						<p>
+							From:
+						</p>
+						<input class="main-input-row-1" type="text">
+					</div>
+					<div class="main-input-row-1__item">
+
+						<p>
+							To:
+						</p>
+						<input class="main-input-row-1" type="text">
+					</div>
+				</div>
+
+				<div class="main-input-row-2">
+					<div class="main-input-row-2-container">
+						<div class="main-input-row-2-container">Depart day</div>
+						<select class="main-input-row-2-container" type="text">
+							<option disabled>Select day</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+						</select>
+					</div>
+
+					<div id="return-day" class="display-none">
+						<div class="main-input-row-2-container">Return day</div>
+						<select class="main-input-row-2-container" type="text">
+							<option disabled>Select day</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+						</select>
+					</div>
+
+					<div class="main-input-row-2-container">
+						<div class="main-input-row-2-container">Fly class</div>
+						<select class="main-input-row-2-container" type="text">
+							<option disabled>Select class</option>
+							<option value="1">Econom</option>
+							<option value="2">Business</option>
+						</select>
+					</div>
+				</div>
+
+
+				<div class="main-button-submit">
+					<button class="main-button-submit">Check ticket</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="flights">
+			<div *ngFor="let f of flights">
+				<div class="f_item">
+					<div class="f_item__title">
+						{{f.company}}
+					</div>
+					<div class="f_item__content">
+						<div class="f_item__left">
+							<p class="time">
+								{{f.startTime}}
+							</p>
+							<p>
+								{{f.pointOfDeparture}}
+							</p>
+							<p>
+								{{f.startDate}}
+							</p>
+						</div>
+						<div class="f_item__mid">
+							<div class="f_item__bar"></div>
+							<i class="material-icons">keyboard_arrow_right</i>
+						</div>
+						<div class="f_item__right">
+							<p class="time">
+								{{f.arrivingTime}}
+							</p>
+							<p>
+								{{f.destination}}
+							</p>
+							<p>
+								{{f.arrivingDate}}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="betweenCon1">
+
+		</div>
+		<app-footer></app-footer>
+
+	</div>
+
+	<script type="text/javascript" src="home.js"></script>
+</body>
+
+</html>
